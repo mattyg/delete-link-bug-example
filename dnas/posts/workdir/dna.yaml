@@ -1,0 +1,28 @@
+---
+manifest_version: "1"
+name: posts
+integrity:
+  network_seed: ~
+  properties: ~
+  origin_time: 1688322580124335
+  zomes:
+    - name: nolinks_integrity
+      hash: ~
+      bundled: "../../../target/wasm32-unknown-unknown/release/nolinks_integrity.wasm"
+      dependencies: ~
+    - name: posts_integrity
+      hash: ~
+      bundled: "../../../target/wasm32-unknown-unknown/release/posts_integrity.wasm"
+      dependencies: ~
+coordinator:
+  zomes:
+    - name: nolinks
+      hash: ~
+      bundled: "../../../target/wasm32-unknown-unknown/release/nolinks.wasm"
+      dependencies:
+        - name: nolinks_integrity
+    - name: posts
+      hash: ~
+      bundled: "../../../target/wasm32-unknown-unknown/release/posts.wasm"
+      dependencies:
+        - name: posts_integrity
